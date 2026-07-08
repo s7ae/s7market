@@ -1,0 +1,16 @@
+# Cloudflare Pages headers 规则
+# 文档: https://developers.cloudflare.com/pages/configuration/headers/
+
+# manifest 允许跨域读取，且不缓存（保证客户端每次刷新拿到最新清单）
+/manifest.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache, must-revalidate
+
+# 所有资源文件允许跨域下载，缓存 1 小时
+/neverlose/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/gamesense/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
